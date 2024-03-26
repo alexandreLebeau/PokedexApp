@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 const card = {
   width: "200px",
@@ -12,16 +12,31 @@ const card = {
   textShadow: "0px 0px 5px gray",
 }
 
+const photoStyle = {
+  width: "100px"
+}
+
+const titreCarteStyle ={
+  display: "flex",
+  justifyContent: "center"
+}
+
 function PokemonCard({pokemon}){
    return (
     <>
-      <figure>
-        {pokemon.imgSrc ? <img src={pokemon.imgSrc}></img> : <p>???</p>}
+      <figure style={card}>
+        {pokemon.imgSrc ? <img style={photoStyle}src={pokemon.imgSrc}></img> : <p>???</p>}
       </figure>
-      <figcaption>{pokemon.name}</figcaption>
+      <figcaption style={titreCarteStyle}>{pokemon.name}</figcaption>
     </>
    )
 }
 
+PokemonCard.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
+}
 
 export default PokemonCard;
