@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard"
+import NavBar from "./components/NavBar"
 
 const pokemonList = [
   {
@@ -28,12 +29,13 @@ const buttonPOff = pokemonIndex > 0
 const buttonSOff = pokemonIndex < pokemonList.length - 1
   return (
     <div className="globalDisplay">
-      <button onClick={handleClickP} disabled={!buttonPOff } >Précedent
-</button>
-
-     <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-     <button onClick={handleClickS} disabled={!buttonSOff }>Suivant</button>
-
+    <NavBar
+    handleClickP={handleClickP}
+    handleClickS={handleClickS}
+    buttonPOff={buttonPOff}
+    buttonSOff={buttonSOff}/>
+    <PokemonCard 
+    pokemon={pokemonList[pokemonIndex]} />
     </div>
   );
 
