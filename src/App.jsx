@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PokemonCard from "./components/PokemonCard"
 
 const pokemonList = [
@@ -18,13 +19,25 @@ const pokemonList = [
 
 
 function App () {
+const [pokemonIndex, setPokemonIndex] = useState(0);
+const handleClickS = () => { 
+  setPokemonIndex(pokemonIndex + 1);}
+const handleClickP = () => { 
+  setPokemonIndex(pokemonIndex - 1);}
+const buttonPOff = pokemonIndex > 0
+const buttonSOff = pokemonIndex < pokemonList.length - 1
   return (
-    <div>
-     <PokemonCard pokemon={pokemonList[0]} />
-     <PokemonCard pokemon={pokemonList[1]} />
-     <PokemonCard pokemon={pokemonList[2]} />
+    <div className="globalDisplay">
+      <button onClick={handleClickP} disabled={!buttonPOff } >Précedent
+</button>
+
+     <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+     <button onClick={handleClickS} disabled={!buttonSOff }>Suivant</button>
+
     </div>
   );
-}
 
+}
 export default App;
+
+

@@ -5,7 +5,8 @@
   text-align: center;
 }
 
-.Pokename {
-  color: blue;
+.globalDisplay {
+  display: flex;
+  flex-direction: row;
   
 }

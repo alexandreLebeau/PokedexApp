@@ -23,12 +23,12 @@ const titreCarteStyle ={
 
 function PokemonCard({pokemon}){
    return (
-    <>
+    <div >
       <figure style={card}>
         {pokemon.imgSrc ? <img style={photoStyle}src={pokemon.imgSrc}></img> : <p>???</p>}
       </figure>
       <figcaption style={titreCarteStyle}>{pokemon.name}</figcaption>
-    </>
+    </div>
    )
 }
 

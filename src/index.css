@@ -68,3 +68,10 @@ button:focus-visible {
 
  
 }
+
+.globalDisplay {
+  display: flex;
+  flex-direction: row;
+  
+}
+
