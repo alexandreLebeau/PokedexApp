@@ -1,10 +1,10 @@
-function NavBar({ pokemonList}) {
+function NavBar({pokemonListing, displayPokemon}) {
     return (
         <div>
-            {pokemonList.map((pokemonList) => (
-                <button key={pokemonList.name}
-                /*onClick={}*/>
-                {pokemonList.name} 
+            {pokemonListing.map((eachPokemon, index) => (
+                <button key={eachPokemon.name}
+                onClick={() => displayPokemon(index) }>
+                {eachPokemon.name} 
                 </button>))}
         </div>
      )} ;

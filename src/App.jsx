@@ -13,29 +13,24 @@ const pokemonList = [
     imgSrc:"https://www.pokepedia.fr/images/4/44/Herbizarre-RFVF.png"
   },
   {
-    name: "mew",
+    name: "Venusaur",
+    imgSrc:"https://www.pokepedia.fr/images/4/42/Florizarre-RFVF.png"
   },
+  {
+    name: "mew",
+  }
 ];
 
 
 
 function App () {
 const [pokemonIndex, setPokemonIndex] = useState(0);
-
-// const handleClickS = () => { 
-//   setPokemonIndex(pokemonIndex + 1);}
-// const handleClickP = () => { 
-//   setPokemonIndex(pokemonIndex - 1);}
-// const buttonPOff = pokemonIndex > 0
-// const buttonSOff = pokemonIndex < pokemonList.length - 1
+const displayPokemon = (index)=> setPokemonIndex(index)  
   return (
     <div className="globalDisplay">
     <NavBar
-    pokemonList={pokemonList}
-    /*handleClickP={handleClickP}
-    handleClickS={handleClickS}
-    buttonPOff={buttonPOff}
-    buttonSOff={buttonSOff}*/ />
+    pokemonListing={pokemonList}
+    displayPokemon={displayPokemon}/>
     <PokemonCard 
     pokemon={pokemonList[pokemonIndex]} />
     </div>
