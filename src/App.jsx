@@ -21,19 +21,21 @@ const pokemonList = [
 
 function App () {
 const [pokemonIndex, setPokemonIndex] = useState(0);
-const handleClickS = () => { 
-  setPokemonIndex(pokemonIndex + 1);}
-const handleClickP = () => { 
-  setPokemonIndex(pokemonIndex - 1);}
-const buttonPOff = pokemonIndex > 0
-const buttonSOff = pokemonIndex < pokemonList.length - 1
+
+// const handleClickS = () => { 
+//   setPokemonIndex(pokemonIndex + 1);}
+// const handleClickP = () => { 
+//   setPokemonIndex(pokemonIndex - 1);}
+// const buttonPOff = pokemonIndex > 0
+// const buttonSOff = pokemonIndex < pokemonList.length - 1
   return (
     <div className="globalDisplay">
     <NavBar
-    handleClickP={handleClickP}
+    pokemonList={pokemonList}
+    /*handleClickP={handleClickP}
     handleClickS={handleClickS}
     buttonPOff={buttonPOff}
-    buttonSOff={buttonSOff}/>
+    buttonSOff={buttonSOff}*/ />
     <PokemonCard 
     pokemon={pokemonList[pokemonIndex]} />
     </div>

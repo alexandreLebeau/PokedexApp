@@ -1,14 +1,13 @@
-function NavBar({handleClickS, handleClickP, buttonPOff, buttonSOff}) {
-  return (
-    <>
-      <button onClick={handleClickP} disabled={!buttonPOff}>
-        Précedent
-      </button>
-      <button onClick={handleClickS} disabled={!buttonSOff}>
-        Suivant
-      </button>
-    </>
-  );
-}
+function NavBar({ pokemonList}) {
+    return (
+        <div>
+            {pokemonList.map((pokemonList) => (
+                <button key={pokemonList.name}
+                /*onClick={}*/>
+                {pokemonList.name} 
+                </button>))}
+        </div>
+     )} ;
+
 
 export default NavBar;
